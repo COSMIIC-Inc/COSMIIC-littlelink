@@ -5,6 +5,27 @@
 * http://www.opensource.org/licenses/mit-license.php
 */
 
+.star-trail-img {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  width: 24px;
+  height: 24px;
+  animation: floatFadeImg 1s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes floatFadeImg {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.5);
+  }
+}
+
 /* Base Typography Settings
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
@@ -65,8 +86,8 @@
   body {
 	margin:0;
 	padding:0;
-	background-color:#ffffff;
-	color:#1a1a1a;
+	background-color:#1b1b1d;
+	color: #ffffff;
 	font-family:"Open Sans",system-ui;
 	font-size:1.125rem;     				/* 18px */
     font-weight:400;
@@ -75,8 +96,9 @@
 
 /* Typography
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  h1 {
+  h1, h2 {
 	margin:0 0 0.5rem 0;
+	color:#0C6F6E;
 	font-size:3rem;         		/* 48px */
     font-weight:800;
 	line-height:1;
@@ -87,6 +109,8 @@
 }
 .container p {
 	margin:0 0 2rem 0;
+	color:#0C6F6E;
+
 }
 
 /* Base Typography Settings
@@ -177,12 +201,19 @@ footer {
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-	color:#2457F5;
+	color:#0C6F6E;
+	font-style: ;
 	text-decoration:underline;
 }
 a:hover {
-	color:#083BDA;
+	color:#0C6F6E;
 }
+
+/* Bold text is unique
+-------------------------------------------------- */
+b, strong {
+  color: #0C6F6E;
+  }
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -248,7 +279,8 @@ a:hover {
 /* Light theme is default above */
 
 /* Dark theme */
-:root.theme-dark {
+
+/* :root.theme-dark {
 	color-scheme:dark;
 }
 :root.theme-dark :focus-visible {
@@ -265,6 +297,7 @@ a:hover {
 :root.theme-dark a:not(.button):hover {
 	color:#7AB8FF;
 }
+*/
 
 /* Auto theme */
 :root.theme-auto {
